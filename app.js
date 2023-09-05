@@ -1,8 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose")
+const taskRouter = require("./routers/task")
 
 
 const app = express()
+
+app.use("/tasks", taskRouter)
 
 async function main() {
  
