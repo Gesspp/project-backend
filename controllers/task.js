@@ -3,6 +3,7 @@ const Task = require("../models/task");
 
 const add = async (req, res) => {
     if (!req.body) return res.status(400).json({error: "no data"})
+    console.log(req.body)
     const { title, color } = req.body;
     const task = new Task({title, color, done: false});
     await task.save();
